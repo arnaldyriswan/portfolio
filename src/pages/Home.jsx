@@ -1,3 +1,4 @@
+import { Contact } from "lucide-react"
 import { AboutMe } from "../components/AboutMe"
 import { HeroSection } from "../components/HeroSection"
 import { Navbar } from "../components/Navbar"
@@ -5,6 +6,7 @@ import { ProjectSection } from "../components/ProjectSection"
 import SkillSection from "../components/SkillSection"
 import { StarBackground } from "../components/StarBackground"
 import { ThemeToggle } from "../components/ThemeToggle"
+import { ContactSection } from "../components/ContactSection"
 
 export const Home = () => {
     return (
@@ -20,6 +22,7 @@ export const Home = () => {
                 <AboutMe />
                 <SkillSection />
                 <ProjectSection />
+                <ContactSection />  
             </main>
 
         </div>
