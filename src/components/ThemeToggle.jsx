@@ -3,18 +3,22 @@ import { useEffect, useState } from "react"
 import { cn } from "../lib/utils";
 
 export const ThemeToggle = () => {
-    const [isDarkMode, setIsDarkMode] = useState(false);
+    const [isDarkMode, setIsDarkMode] = useState(true);
 
     useEffect(() => {
         const storedTheme = localStorage.getItem("theme")
         if (storedTheme === "dark") {
             setIsDarkMode(true);
             document.documentElement.classList.add("dark");
-        } else {
+        } else if (storedTheme === "light") {
             setIsDarkMode(false);
-            localStorage.setItem("theme", "light")
-
-        };
+            document.documentElement.classList.remove("dark");
+        } else {
+            // Default to dark mode
+            setIsDarkMode(true);
+            localStorage.setItem("theme", "dark")
+            document.documentElement.classList.add("dark");
+        }
     }, []);
 
     const toggleTheme = () => {
